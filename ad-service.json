@@ -1,0 +1,963 @@
+{
+    "collection": {
+        "info": {
+            "_postman_id": "8a4115a1-321e-4407-9292-5b744d8ab35a",
+            "name": "ad-service",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+        },
+        "item": [
+            {
+                "_postman_id": "32418c1b-3352-4f44-8c6b-7ea7cc3733a9",
+                "name": "old-design",
+                "description": "",
+                "item": [
+                    {
+                        "_postman_id": "641b42f0-b0b1-4f56-b5fa-a3fe4ab92ce6",
+                        "name": "contracts",
+                        "description": "",
+                        "item": [
+                            {
+                                "_postman_id": "06d8ac5e-ee64-4eab-8275-7ddc52eb1aba",
+                                "name": "Index for a brand",
+                                "request": {
+                                    "method": "GET",
+                                    "header": [],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": ""
+                                    },
+                                    "url": {
+                                        "raw": "/brand/new-balance/contracts",
+                                        "path": [
+                                            "brand",
+                                            "new-balance",
+                                            "contracts"
+                                        ]
+                                    }
+                                },
+                                "response": [
+                                    {
+                                        "id": "1dc70450-0313-4218-8a53-cbb904789a1d",
+                                        "name": "Index for New Balance",
+                                        "originalRequest": {
+                                            "method": "GET",
+                                            "header": [],
+                                            "body": {
+                                                "mode": "raw",
+                                                "raw": ""
+                                            },
+                                            "url": {
+                                                "raw": "/brand/new-balance/contracts",
+                                                "path": [
+                                                    "brand",
+                                                    "new-balance",
+                                                    "contracts"
+                                                ]
+                                            }
+                                        },
+                                        "status": "OK",
+                                        "code": 200,
+                                        "_postman_previewlanguage": "json",
+                                        "header": null,
+                                        "cookie": [],
+                                        "responseTime": null,
+                                        "body": "{ \"contracts\": [\n\t{ \n\t\t\"id\": \"3ea70518-b6bf-47a8-b620-7d6ac576ab63\",\n\t\t\"name\": \"Super Contract\",\n\t\t\"start_date\": \"2018-02-24T15:28:49.000Z\",\n\t\t\"end_date\": \"2018-02-28T15:28:49.000Z\",\n\t\t\"amount_cents\": 500000\n\t},\n\t{ \n\t\t\"name\": \"Other Contract\",\n\t\t\"start_date\": \"2018-05-01T15:28:49.000Z\",\n\t\t\"end_date\": \"2018-07-01T15:28:49.000Z\",\n\t\t\"amount_cents\": 700000\n\t}\n]\n}"
+                                    }
+                                ]
+                            },
+                            {
+                                "_postman_id": "927d33b0-ff53-4210-9f58-df1c67cdf4de",
+                                "name": "Get information about a contract",
+                                "request": {
+                                    "method": "GET",
+                                    "header": [],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": ""
+                                    },
+                                    "url": {
+                                        "raw": "contracts/{{contract_id}}",
+                                        "host": [
+                                            "contracts"
+                                        ],
+                                        "path": [
+                                            "{{contract_id}}"
+                                        ]
+                                    }
+                                },
+                                "response": [
+                                    {
+                                        "id": "a4b41543-4fec-4951-a3bc-9e16409e38ae",
+                                        "name": "GET contract",
+                                        "originalRequest": {
+                                            "method": "GET",
+                                            "header": [],
+                                            "body": {
+                                                "mode": "raw",
+                                                "raw": ""
+                                            },
+                                            "url": {
+                                                "raw": "/contracts/3ea70518-b6bf-47a8-b620-7d6ac576ab63",
+                                                "path": [
+                                                    "contracts",
+                                                    "3ea70518-b6bf-47a8-b620-7d6ac576ab63"
+                                                ]
+                                            }
+                                        },
+                                        "_postman_previewlanguage": "json",
+                                        "header": null,
+                                        "cookie": [],
+                                        "responseTime": null,
+                                        "body": "{\n    \"id\": \"3ea70518-b6bf-47a8-b620-7d6ac576ab63\",\n    \"owner\": {\n        \"entity_type\": \"brand\",\n        \"entity_id\": \"new-balance\"\n    },\n    \"name\": \"Super Contract\",\n    \"start_date\": \"2018-02-24T15:28:49.000Z\",\n    \"end_date\": \"2018-02-28T15:28:49.000Z\",\n    \"amount_cents\": 500000\n}"
+                                    }
+                                ]
+                            },
+                            {
+                                "_postman_id": "b1aafff6-ef5a-4574-87d9-4c2140e48eb2",
+                                "name": "Create a contract",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": ""
+                                    },
+                                    "url": {
+                                        "raw": "{{entity_type}}/{{entity_id}}/contracts",
+                                        "host": [
+                                            "{{entity_type}}"
+                                        ],
+                                        "path": [
+                                            "{{entity_id}}",
+                                            "contracts"
+                                        ]
+                                    }
+                                },
+                                "response": [
+                                    {
+                                        "id": "a6275c1e-6572-479f-9845-ff38e8df2017",
+                                        "name": "Create a contract for brand New Balance",
+                                        "originalRequest": {
+                                            "method": "POST",
+                                            "header": [
+                                                {
+                                                    "key": "Content-Type",
+                                                    "name": "Content-Type",
+                                                    "value": "application/json",
+                                                    "type": "text"
+                                                }
+                                            ],
+                                            "body": {
+                                                "mode": "raw",
+                                                "raw": "{\n    \"start_date\": \"2018-02-24T15:28:49.000Z\",\n    \"end_date\": \"2018-02-28T15:28:49.000Z\",\n    \"amount_cents\": 500000\n}"
+                                            },
+                                            "url": {
+                                                "raw": "brand/new-balance/contracts",
+                                                "host": [
+                                                    "brand"
+                                                ],
+                                                "path": [
+                                                    "new-balance",
+                                                    "contracts"
+                                                ]
+                                            }
+                                        },
+                                        "status": "Created",
+                                        "code": 201,
+                                        "_postman_previewlanguage": "json",
+                                        "header": null,
+                                        "cookie": [],
+                                        "responseTime": null,
+                                        "body": "{ \n\t\"id\": \"3ea70518-b6bf-47a8-b620-7d6ac576ab63\",\n\t\"start_date\": \"2018-02-24T15:28:49.000Z\",\n\t\"end_date\": \"2018-02-28T15:28:49.000Z\",\n\t\"amount_cents\": 500000\n}"
+                                    }
+                                ]
+                            },
+                            {
+                                "_postman_id": "93bd6ba4-8492-449f-a174-5b9f04d28887",
+                                "name": "Update a contract",
+                                "request": {
+                                    "method": "PUT",
+                                    "header": [],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": ""
+                                    },
+                                    "url": {
+                                        "raw": "contracts/{{contract_id}}",
+                                        "host": [
+                                            "contracts"
+                                        ],
+                                        "path": [
+                                            "{{contract_id}}"
+                                        ]
+                                    }
+                                },
+                                "response": [
+                                    {
+                                        "id": "0cad2e99-eef2-45b6-8755-15343eb085df",
+                                        "name": "Update a contract",
+                                        "originalRequest": {
+                                            "method": "PUT",
+                                            "header": [
+                                                {
+                                                    "key": "Content-Type",
+                                                    "name": "Content-Type",
+                                                    "value": "application/json",
+                                                    "type": "text"
+                                                }
+                                            ],
+                                            "body": {
+                                                "mode": "raw",
+                                                "raw": "{\n    \"name\": \"Renamed Super Contract\",\n    \"start_date\": \"2019-02-24T15:28:49.000Z\",\n    \"end_date\": \"2019-02-28T15:28:49.000Z\"\n}"
+                                            },
+                                            "url": {
+                                                "raw": "contracts/{{contract_id}}",
+                                                "host": [
+                                                    "contracts"
+                                                ],
+                                                "path": [
+                                                    "{{contract_id}}"
+                                                ]
+                                            }
+                                        },
+                                        "_postman_previewlanguage": null,
+                                        "header": null,
+                                        "cookie": [],
+                                        "responseTime": null,
+                                        "body": null
+                                    }
+                                ]
+                            },
+                            {
+                                "_postman_id": "72cc98a8-bead-4287-955a-64189b537dd4",
+                                "name": "Add / Remove Funding to a Contract",
+                                "request": {
+                                    "method": "PUT",
+                                    "header": [],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": ""
+                                    },
+                                    "url": {
+                                        "raw": "contracts/{{contract_id}}/funding",
+                                        "host": [
+                                            "contracts"
+                                        ],
+                                        "path": [
+                                            "{{contract_id}}",
+                                            "funding"
+                                        ]
+                                    }
+                                },
+                                "response": []
+                            },
+                            {
+                                "_postman_id": "1edbf6e7-d1bd-435b-81ad-e9909e6d1bf3",
+                                "name": "Add retailers to this contract",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": ""
+                                    },
+                                    "url": {
+                                        "raw": "contracts/{{contract_id}}/retailers",
+                                        "host": [
+                                            "contracts"
+                                        ],
+                                        "path": [
+                                            "{{contract_id}}",
+                                            "retailers"
+                                        ]
+                                    }
+                                },
+                                "response": []
+                            },
+                            {
+                                "_postman_id": "608b5dfe-2787-4a49-b59c-fb969cdbb7b7",
+                                "name": "Remove retailers from this contract",
+                                "request": {
+                                    "method": "DELETE",
+                                    "header": [],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": ""
+                                    },
+                                    "url": {
+                                        "raw": "contracts/{{contract_id}}/retailers",
+                                        "host": [
+                                            "contracts"
+                                        ],
+                                        "path": [
+                                            "{{contract_id}}",
+                                            "retailers"
+                                        ]
+                                    }
+                                },
+                                "response": []
+                            }
+                        ],
+                        "_postman_isSubFolder": true
+                    },
+                    {
+                        "_postman_id": "f6bedbb8-e425-4080-8492-0209c92be261",
+                        "name": "campaigns",
+                        "description": "",
+                        "item": [
+                            {
+                                "_postman_id": "6b25f849-64d5-427d-b461-3bd5d558dde9",
+                                "name": "Get a list of campaigns for a contract",
+                                "request": {
+                                    "method": "GET",
+                                    "header": [],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": ""
+                                    },
+                                    "url": {
+                                        "raw": "contract/{{contract_id}}/campaigns",
+                                        "host": [
+                                            "contract"
+                                        ],
+                                        "path": [
+                                            "{{contract_id}}",
+                                            "campaigns"
+                                        ]
+                                    }
+                                },
+                                "response": []
+                            },
+                            {
+                                "_postman_id": "91f6e563-0f31-43a0-8539-e004ecb0db6c",
+                                "name": "Get information about a contract",
+                                "request": {
+                                    "method": "GET",
+                                    "header": [],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": ""
+                                    },
+                                    "url": {
+                                        "raw": "campaigns/{{campaign_id}}",
+                                        "host": [
+                                            "campaigns"
+                                        ],
+                                        "path": [
+                                            "{{campaign_id}}"
+                                        ]
+                                    }
+                                },
+                                "response": []
+                            },
+                            {
+                                "_postman_id": "3148f9da-6ff2-4386-8a6e-1030987402fe",
+                                "name": "Create a campaign for a contract",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": ""
+                                    },
+                                    "url": {
+                                        "raw": "contract/{{contract_id}}/campaigns",
+                                        "host": [
+                                            "contract"
+                                        ],
+                                        "path": [
+                                            "{{contract_id}}",
+                                            "campaigns"
+                                        ]
+                                    }
+                                },
+                                "response": []
+                            },
+                            {
+                                "_postman_id": "1a45770e-a3ea-4a71-82a2-3693523ff54c",
+                                "name": "Update a campaign",
+                                "request": {
+                                    "method": "PUT",
+                                    "header": [],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": ""
+                                    },
+                                    "url": {
+                                        "raw": "campaigns/{{campaign_id}}",
+                                        "host": [
+                                            "campaigns"
+                                        ],
+                                        "path": [
+                                            "{{campaign_id}}"
+                                        ]
+                                    }
+                                },
+                                "response": []
+                            },
+                            {
+                                "_postman_id": "ab48a124-4528-48ba-a9c5-2ec093d4c73d",
+                                "name": "Add / Remove Funding to a Campaign",
+                                "request": {
+                                    "method": "PUT",
+                                    "header": [],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": ""
+                                    },
+                                    "url": {
+                                        "raw": "campaigns/{{campaign_id}}/funding",
+                                        "host": [
+                                            "campaigns"
+                                        ],
+                                        "path": [
+                                            "{{campaign_id}}",
+                                            "funding"
+                                        ]
+                                    }
+                                },
+                                "response": []
+                            },
+                            {
+                                "_postman_id": "b151ccd6-d763-4d25-88a2-468db75eb2a1",
+                                "name": "Add retailers to this campaign",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": ""
+                                    },
+                                    "url": {
+                                        "raw": "campaigns/{{campaign_id}}/retailers",
+                                        "host": [
+                                            "campaigns"
+                                        ],
+                                        "path": [
+                                            "{{campaign_id}}",
+                                            "retailers"
+                                        ]
+                                    }
+                                },
+                                "response": []
+                            },
+                            {
+                                "_postman_id": "8d34f05e-c6aa-43dc-a98e-5e060465257c",
+                                "name": "Remove retailers from this campaign",
+                                "request": {
+                                    "method": "DELETE",
+                                    "header": [],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": ""
+                                    },
+                                    "url": {
+                                        "raw": "campaigns/{{campaign_id}}/retailers",
+                                        "host": [
+                                            "campaigns"
+                                        ],
+                                        "path": [
+                                            "{{campaign_id}}",
+                                            "retailers"
+                                        ]
+                                    }
+                                },
+                                "response": []
+                            },
+                            {
+                                "_postman_id": "4704bdbc-983a-4655-82d5-76e0e096516c",
+                                "name": "Add / Remove Funding to a Retailer in a Campaign",
+                                "request": {
+                                    "method": "PUT",
+                                    "header": [],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": ""
+                                    },
+                                    "url": {
+                                        "raw": "campaigns/{{campaign_id}}/retailers/{{retailer_id}}/funding",
+                                        "host": [
+                                            "campaigns"
+                                        ],
+                                        "path": [
+                                            "{{campaign_id}}",
+                                            "retailers",
+                                            "{{retailer_id}}",
+                                            "funding"
+                                        ]
+                                    }
+                                },
+                                "response": []
+                            },
+                            {
+                                "_postman_id": "032b8165-07d1-4037-807d-e8ef3733c80d",
+                                "name": "Get a list of campaigns available to a retailer",
+                                "request": {
+                                    "method": "GET",
+                                    "header": [],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": ""
+                                    },
+                                    "url": {
+                                        "raw": "retailers/{{retailer_id}}/campaigns",
+                                        "host": [
+                                            "retailers"
+                                        ],
+                                        "path": [
+                                            "{{retailer_id}}",
+                                            "campaigns"
+                                        ]
+                                    }
+                                },
+                                "response": []
+                            }
+                        ],
+                        "_postman_isSubFolder": true
+                    },
+                    {
+                        "_postman_id": "f5577d02-e331-4938-8310-3b610d979a01",
+                        "name": "ad_templates",
+                        "description": "",
+                        "item": [
+                            {
+                                "_postman_id": "81784bde-ce8b-4c4e-90f8-dcff2b2a5d31",
+                                "name": "Get a list of ad_templates for a campaign",
+                                "request": {
+                                    "method": "GET",
+                                    "header": [],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": ""
+                                    },
+                                    "url": {
+                                        "raw": "campaigns/{{campaign_id}}/ad_templates",
+                                        "host": [
+                                            "campaigns"
+                                        ],
+                                        "path": [
+                                            "{{campaign_id}}",
+                                            "ad_templates"
+                                        ]
+                                    }
+                                },
+                                "response": []
+                            },
+                            {
+                                "_postman_id": "f8a843ee-f0ed-4262-b664-c8a642f669e0",
+                                "name": "Get information about an ad_template",
+                                "request": {
+                                    "method": "GET",
+                                    "header": [],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": ""
+                                    },
+                                    "url": {
+                                        "raw": "ad_templates/{{ad_template_id}}",
+                                        "host": [
+                                            "ad_templates"
+                                        ],
+                                        "path": [
+                                            "{{ad_template_id}}"
+                                        ]
+                                    }
+                                },
+                                "response": []
+                            },
+                            {
+                                "_postman_id": "3a31b0b4-d816-4448-8ec8-c523032c0a1a",
+                                "name": "Create an ad_template for a campaign",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": ""
+                                    },
+                                    "url": {
+                                        "raw": "campaigns/{{campaign_id}}/ad_templates",
+                                        "host": [
+                                            "campaigns"
+                                        ],
+                                        "path": [
+                                            "{{campaign_id}}",
+                                            "ad_templates"
+                                        ]
+                                    }
+                                },
+                                "response": [
+                                    {
+                                        "id": "8ca249ec-34b7-4f54-9fbf-f19a7b1a85fb",
+                                        "name": "Create an ad_template for a campaign",
+                                        "originalRequest": {
+                                            "method": "POST",
+                                            "header": [
+                                                {
+                                                    "key": "Content-Type",
+                                                    "name": "Content-Type",
+                                                    "value": "application/json",
+                                                    "type": "text"
+                                                }
+                                            ],
+                                            "body": {
+                                                "mode": "raw",
+                                                "raw": "{\n\t\"channel\": \"facebook\",\n\t\"name\": \"My first ad_template\",\n\t\"bidding\": {\n\t\t\"bid_strategy\": \"LOWEST_COST_WITHOUT_CAP\",\n\t\t\"billing_event\": \"LINK_CLICKS\",\n\t\t\"optimization_goal\": \"LINK_CLICKS\"\n\t},\n\t\"targeting\": [\n\t\t\"geo_locations\": [\n\t\t\t{ \"countries\": [\"US\"] }\n\t\t] ,\n\t\t\"publisher_platforms\": [\"facebook\", \"audience_network\"],\n\t\t\"device_platforms\": [\"mobile\"],\n\t\t\"user_os\": [\"IOS\"]\n\t\t\n\t\t\n\t}\n\t],\n\t\"creatives\": [\n\t]\n\t\n\t\n\t\n\t\n\t\"targeting\": {\n\t\t\"placements\": \n\t}\n\t\"ad_targets\": [\"11\", \"22\", \"33\"],\n\t\"ad_placements\": {\n\t\t\"facebook\": {\n\t\t\t\"positions\": [\"feed\", \"story\"]\n\t\t}\n\t},\n\t\"ad_creatives\": [\"44\", \"55\"]\n}"
+                                            },
+                                            "url": {
+                                                "raw": "campaigns/{{campaign_id}}/ad_templates",
+                                                "host": [
+                                                    "campaigns"
+                                                ],
+                                                "path": [
+                                                    "{{campaign_id}}",
+                                                    "ad_templates"
+                                                ]
+                                            }
+                                        },
+                                        "_postman_previewlanguage": null,
+                                        "header": null,
+                                        "cookie": [],
+                                        "responseTime": null,
+                                        "body": null
+                                    }
+                                ]
+                            },
+                            {
+                                "_postman_id": "37ef59d5-5aa6-471e-b909-f4d3f8dd13b7",
+                                "name": "Add a targeting spec to an ad_template",
+                                "request": {
+                                    "method": "PUT",
+                                    "header": [],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": ""
+                                    },
+                                    "url": {
+                                        "raw": "ad_template/{{ad_template_id}}/targeting/{{targeting_sepc_id}}",
+                                        "host": [
+                                            "ad_template"
+                                        ],
+                                        "path": [
+                                            "{{ad_template_id}}",
+                                            "targeting",
+                                            "{{targeting_sepc_id}}"
+                                        ]
+                                    }
+                                },
+                                "response": []
+                            },
+                            {
+                                "_postman_id": "a8381d0f-a8d7-48e5-88a6-f1b2d77f3a72",
+                                "name": "Remove a targeting spec from an ad_template",
+                                "request": {
+                                    "method": "DELETE",
+                                    "header": [],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": ""
+                                    },
+                                    "url": {
+                                        "raw": "ad_template/{{ad_template_id}}/targeting/{{targeting_spec_id}}",
+                                        "host": [
+                                            "ad_template"
+                                        ],
+                                        "path": [
+                                            "{{ad_template_id}}",
+                                            "targeting",
+                                            "{{targeting_spec_id}}"
+                                        ]
+                                    }
+                                },
+                                "response": []
+                            },
+                            {
+                                "_postman_id": "7e395d8d-8e0f-4b6b-89e9-8662487c87be",
+                                "name": "Add a creative to an ad_template",
+                                "request": {
+                                    "method": "PUT",
+                                    "header": [],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": ""
+                                    },
+                                    "url": {
+                                        "raw": "ad_template/{{ad_template_id}}/creative/{{creative_spec_id}}",
+                                        "host": [
+                                            "ad_template"
+                                        ],
+                                        "path": [
+                                            "{{ad_template_id}}",
+                                            "creative",
+                                            "{{creative_spec_id}}"
+                                        ]
+                                    }
+                                },
+                                "response": []
+                            },
+                            {
+                                "_postman_id": "bba24ec1-b1ec-4d3e-b0c9-de3d359bcd10",
+                                "name": "Remove a creative from an ad_template",
+                                "request": {
+                                    "method": "DELETE",
+                                    "header": [],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": ""
+                                    },
+                                    "url": {
+                                        "raw": "ad_template/{{ad_template_id}}/creative/{{creative_spec_id}}",
+                                        "host": [
+                                            "ad_template"
+                                        ],
+                                        "path": [
+                                            "{{ad_template_id}}",
+                                            "creative",
+                                            "{{creative_spec_id}}"
+                                        ]
+                                    }
+                                },
+                                "response": []
+                            },
+                            {
+                                "_postman_id": "a6cb2cc9-28c7-4f78-9dfc-b0b7ed592c20",
+                                "name": "Execute an ad_template for a retailer",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "name": "Content-Type",
+                                            "value": "application/json",
+                                            "type": "text"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n\tcustomizations: [\n\t]\n}"
+                                    },
+                                    "url": {
+                                        "raw": "ad_templates/{{ad_template_id}}/execute",
+                                        "host": [
+                                            "ad_templates"
+                                        ],
+                                        "path": [
+                                            "{{ad_template_id}}",
+                                            "execute"
+                                        ]
+                                    }
+                                },
+                                "response": []
+                            },
+                            {
+                                "_postman_id": "3f99d629-c8e5-4dcb-be12-f104a00bba15",
+                                "name": "Get a list of ad_templates available to a retailer",
+                                "request": {
+                                    "method": "GET",
+                                    "header": [],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": ""
+                                    },
+                                    "url": {
+                                        "raw": "retailers/{{retailer_id}}/ad_templates",
+                                        "host": [
+                                            "retailers"
+                                        ],
+                                        "path": [
+                                            "{{retailer_id}}",
+                                            "ad_templates"
+                                        ]
+                                    }
+                                },
+                                "response": []
+                            }
+                        ],
+                        "_postman_isSubFolder": true
+                    },
+                    {
+                        "_postman_id": "10987458-cdd4-41b7-a653-bb568153d104",
+                        "name": "ad_creatives",
+                        "description": "",
+                        "item": [
+                            {
+                                "_postman_id": "c9dc3170-d7c3-4613-95bf-af038658c4cd",
+                                "name": "Create ad creative from existing organic campaign share setting",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": ""
+                                    },
+                                    "url": {
+                                        "raw": "brands/{{brand_id}}/ad_creatives?share_setting_id={{organic_share_setting}}",
+                                        "host": [
+                                            "brands"
+                                        ],
+                                        "path": [
+                                            "{{brand_id}}",
+                                            "ad_creatives"
+                                        ],
+                                        "query": [
+                                            {
+                                                "key": "share_setting_id",
+                                                "value": "{{organic_share_setting}}",
+                                                "equals": true
+                                            }
+                                        ]
+                                    }
+                                },
+                                "response": []
+                            }
+                        ],
+                        "_postman_isSubFolder": true
+                    },
+                    {
+                        "_postman_id": "5c0fe54e-6b8b-4274-9eb0-de45f95f9f00",
+                        "name": "retailers (Legacy API)",
+                        "description": "",
+                        "item": [
+                            {
+                                "_postman_id": "3b9d2714-80e5-4a36-ba58-239f86c64d12",
+                                "name": "List of retailers with Perform Pro for a brand",
+                                "request": {
+                                    "method": "GET",
+                                    "header": [],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": ""
+                                    },
+                                    "url": {
+                                        "raw": "brands/{{brand_id}}/retailers?filters['perform_pro']",
+                                        "host": [
+                                            "brands"
+                                        ],
+                                        "path": [
+                                            "{{brand_id}}",
+                                            "retailers"
+                                        ],
+                                        "query": [
+                                            {
+                                                "key": "filters['perform_pro']",
+                                                "value": "",
+                                                "equals": false
+                                            }
+                                        ]
+                                    }
+                                },
+                                "response": []
+                            }
+                        ],
+                        "_postman_isSubFolder": true
+                    },
+                    {
+                        "_postman_id": "3ef11a4d-0f26-4d9c-b467-c03ba9a4f8cd",
+                        "name": "ad_targets",
+                        "description": "",
+                        "item": [
+                            {
+                                "_postman_id": "bf691243-e830-4297-816e-a2053ee2090a",
+                                "name": "Create an ad target for a brand",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": ""
+                                    },
+                                    "url": {
+                                        "raw": "brands/{{brand_id}}/ad_targets",
+                                        "host": [
+                                            "brands"
+                                        ],
+                                        "path": [
+                                            "{{brand_id}}",
+                                            "ad_targets"
+                                        ]
+                                    }
+                                },
+                                "response": []
+                            },
+                            {
+                                "_postman_id": "aac1cde6-05e3-4472-9265-dde061faf96a",
+                                "name": "Get a list of ad_targets for a brand",
+                                "request": {
+                                    "method": "GET",
+                                    "header": [],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": ""
+                                    },
+                                    "url": {
+                                        "raw": "brands/{{brand_id}}/ad_targets",
+                                        "host": [
+                                            "brands"
+                                        ],
+                                        "path": [
+                                            "{{brand_id}}",
+                                            "ad_targets"
+                                        ]
+                                    }
+                                },
+                                "response": []
+                            },
+                            {
+                                "_postman_id": "e5c43e7d-190f-4a91-ba68-4ccdf4b9caf2",
+                                "name": "Get a info about an ad_target",
+                                "request": {
+                                    "method": "GET",
+                                    "header": [],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": ""
+                                    },
+                                    "url": {
+                                        "raw": "brands/{{brand_id}}/ad_targets",
+                                        "host": [
+                                            "brands"
+                                        ],
+                                        "path": [
+                                            "{{brand_id}}",
+                                            "ad_targets"
+                                        ]
+                                    }
+                                },
+                                "response": []
+                            }
+                        ],
+                        "_postman_isSubFolder": true
+                    }
+                ]
+            },
+            {
+                "_postman_id": "86d3a210-5d84-45c5-9fcf-21c1786093a3",
+                "name": "Perform Pro MVP",
+                "description": "",
+                "item": []
+            }
+        ],
+        "event": [
+            {
+                "listen": "prerequest",
+                "script": {
+                    "id": "2112ed53-c2ee-4f58-8e0f-82050fe85244",
+                    "type": "text/javascript",
+                    "exec": [
+                        ""
+                    ]
+                }
+            },
+            {
+                "listen": "test",
+                "script": {
+                    "id": "f2fd05ba-188c-4f3c-b01c-0011fad740d5",
+                    "type": "text/javascript",
+                    "exec": [
+                        ""
+                    ]
+                }
+            }
+        ]
+    }
+}
